@@ -1,0 +1,50 @@
+[
+  {
+    "id": 3,
+    "title": "Parasite",
+    "genre": "Drama",
+    "year": 2019,
+    "rating": 8.6,
+    "description": "A poor family schemes to work for a wealthy household."
+  },
+  {
+    "id": 4,
+    "title": "Avengers: Endgame",
+    "genre": "Action",
+    "year": 2019,
+    "rating": 8.4,
+    "description": "The Avengers assemble for one final battle to undo Thanos' destruction."
+  },
+  {
+    "id": 5,
+    "title": "Interstellar",
+    "genre": "Sci-Fi",
+    "year": 2014,
+    "rating": 8.7,
+    "description": "A team travels through a wormhole in search of a new home for humanity."
+  },
+  {
+    "id": 6,
+    "title": "Spider-Man: No Way Home",
+    "genre": "Action",
+    "year": 2021,
+    "rating": 8.2,
+    "description": "Spider-Man faces villains from alternate universes after a spell goes wrong."
+  },
+  {
+    "id": 7,
+    "title": "Joker",
+    "genre": "Crime",
+    "year": 2019,
+    "rating": 8.4,
+    "description": "A struggling comedian descends into madness and becomes a criminal icon."
+  },
+  {
+    "id": 8,
+    "title": "The Conjuring",
+    "genre": "Horror",
+    "year": 2013,
+    "rating": 7.5,
+    "description": "Paranormal investigators help a family terrorized by a dark presence."
+  }
+]

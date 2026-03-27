@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Manager</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=
+    Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class='bx bxs-movie'></i>
+            <div>
+                <span>Movies</span>
+            </div>
+        </div>
+        <button class="btn btn-primary" onclick="openAddModal()">
+            <i class='bx bx-plus'></i>
+            Add Movie
+        </button>
+    </header>
+
+    <main class="main">
+        <section class="catalog-section">
+            <div class="section-head">
+                <h2>Movie Collection</h2>
+            </div>
+
+            <div id="movieGrid" class="cpu-grid"></div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <div class="empty-icon">
+                    <i class='bx bxs-camera-movie'></i>
+                </div>
+                <h3>No Movies Found</h3>
+                <p>Start by adding your first movie.</p>
+                <button class="btn btn-primary" onclick="openAddModal()">
+                    <i class='bx bx-plus'></i>
+                    Add Movie
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add/Edit Modal -->
+    <div id="movieModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modalTitle"><i class='bx bx-plus'></i> Add Movie</h2>
+                <button class="close-btn" onclick="closeModal()">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+
+            <form id="movieForm">
+                <input type="hidden" id="editId">
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="title"><i class='bx bx-film'></i> Title</label>
+                        <input type="text" id="title" name="title"
+                        placeholder="Enter movie title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genre"><i class='bx bx-category'></i> Genre</label>
+                        <select id="genre" name="genre" required>
+                            <option value="">Select Genre</option>
+                            <option value="Action">Action</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Horror">Horror</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="year"><i class='bx bx-calendar'></i> Release Year</label>
+                        <input type="number" id="year" name="year" placeholder="Enter year" min="1900" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rating"><i class='bx bx-star'></i> Rating</label>
+                        <input type="number" id="rating" name="rating" placeholder="Your rating" step="0.1" min="0" max="10">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="description"><i class='bx bx-detail'></i> Description</label>
+                        <textarea id="description" name="description" placeholder="Short movie description"></textarea>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class='bx bx-check'></i>
+                        Save
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div id="deleteModal" class="modal-overlay">
+        <div class="modal modal-small">
+            <div class="delete-icon">
+                <i class='bx bx-trash'></i>
+            </div>
+            <h3>Delete Movie?</h3>
+            <p>This action cannot be undone.</p>
+            <input type="hidden" id="deleteId">
+
+            <div class="modal-actions">
+                <button class="btn btn-ghost" onclick="closeDeleteModal()">Cancel</button>
+                <button class="btn btn-danger" onclick="confirmDeleteAction()">
+                    <i class='bx bx-trash'></i>
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+
+/* BODY */
+body {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #1e293b;
+    border-bottom: 1px solid #334155;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo i {
+    font-size: 26px;
+    color: #38bdf8;
+}
+
+/* MAIN */
+.main {
+    padding: 30px 40px;
+}
+
+.section-head h2 {
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.cpu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* CARD */
+.cpu-card {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 18px;
+    border: 1px solid #334155;
+    transition: 0.2s;
+}
+
+.cpu-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
+
+/* CARD HEADER */
+.card-header {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.card-icon {
+    background: #0f172a;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-icon i {
+    font-size: 22px;
+    color: #38bdf8;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-brand {
+    font-weight: 600;
+}
+
+.card-model {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+/* META */
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.card-price {
+    color: #facc15;
+    font-weight: 600;
+}
+
+.card-size {
+    color: #94a3b8;
+}
+
+/* DESCRIPTION */
+.card-desc {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #cbd5f5;
+}
+
+/* ACTIONS */
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-primary {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+.btn-primary:hover {
+    background: #0ea5e9;
+}
+
+.btn-ghost {
+    background: transparent;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+}
+
+.btn-ghost:hover {
+    border-color: #38bdf8;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+/* EMPTY STATE */
+.empty-state {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.empty-icon i {
+    font-size: 50px;
+    color: #334155;
+}
+
+.empty-state h3 {
+    margin-top: 10px;
+}
+
+.empty-state p {
+    margin: 5px 0 15px;
+    color: #94a3b8;
+}
+
+/* MODAL */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 16px;
+    width: 400px;
+    border: 1px solid #334155;
+}
+
+.modal-small {
+    width: 300px;
+    text-align: center;
+}
+
+/* MODAL HEADER */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #e2e8f0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* FORM */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.form-group input,
+.form-group select {
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+/* MODAL ACTIONS */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* DELETE ICON */
+.delete-icon i {
+    font-size: 40px;
+    color: #ef4444;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
